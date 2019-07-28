@@ -14,5 +14,9 @@ var _state_text = {
 }
 
 
+func setup(character: KinematicBody2D) -> void:
+	character.connect("state_changed", self, "_on_Character_state_changed")
+
+
 func _on_Character_state_changed(state):
 	text = _state_text[state]
